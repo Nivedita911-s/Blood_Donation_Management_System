@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Analytics Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>Blood Donation System</h2>
+
+    <div>
+        <a href="/">Home</a>
+        <a href="/donors">Donors</a>
+        <a href="/requests">Requests</a>
+        <a href="/analytics">Analytics</a>
+    </div>
+
+</nav>
+
+<div class="container">
+
+    <h1>Blood Donation Analytics Dashboard</h1>
+
+    <h2>Blood Group Distribution</h2>
+
+    <table>
+
+        <tr>
+            <th>Blood Group</th>
+            <th>Number of Donors</th>
+        </tr>
+
+        {% for group, count in blood_group_count.items() %}
+
+        <tr>
+            <td>{{ group }}</td>
+            <td>{{ count }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <h2>City-wise Donor Distribution</h2>
+
+    <table>
+
+        <tr>
+            <th>City</th>
+            <th>Number of Donors</th>
+        </tr>
+
+        {% for city, count in city_count.items() %}
+
+        <tr>
+            <td>{{ city }}</td>
+            <td>{{ count }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <h2>Donor Availability</h2>
+
+    <table>
+
+        <tr>
+            <th>Availability</th>
+            <th>Number of Donors</th>
+        </tr>
+
+        {% for status, count in available_count.items() %}
+
+        <tr>
+            <td>{{ status }}</td>
+            <td>{{ count }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <h2>Blood Request Status</h2>
+
+    <table>
+
+        <tr>
+            <th>Status</th>
+            <th>Number of Requests</th>
+        </tr>
+
+        {% for status, count in request_status_count.items() %}
+
+        <tr>
+            <td>{{ status }}</td>
+            <td>{{ count }}</td>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+
+</html>

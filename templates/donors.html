@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Donors</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>Blood Donation System</h2>
+
+    <div>
+        <a href="/">Home</a>
+        <a href="/donors">Donors</a>
+        <a href="/requests">Requests</a>
+        <a href="/analytics">Analytics</a>
+    </div>
+
+</nav>
+
+<div class="container">
+
+    <h1>Donor Management</h1>
+
+    <form method="GET" action="/donors" class="search-form">
+
+        <input
+            type="text"
+            name="blood_group"
+            placeholder="Blood Group e.g. O+">
+
+        <input
+            type="text"
+            name="city"
+            placeholder="City">
+
+        <button type="submit">Search</button>
+
+    </form>
+
+    <h2>Donor List</h2>
+
+    <table>
+
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Blood Group</th>
+            <th>City</th>
+            <th>Phone</th>
+            <th>Available</th>
+        </tr>
+
+        {% for donor in donors %}
+
+        <tr>
+
+            <td>{{ donor.name }}</td>
+            <td>{{ donor.age }}</td>
+            <td>{{ donor.gender }}</td>
+            <td>{{ donor.blood_group }}</td>
+            <td>{{ donor.city }}</td>
+            <td>{{ donor.phone }}</td>
+            <td>{{ donor.available }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <h2>Add New Donor</h2>
+
+    <form method="POST" action="/add_donor">
+
+        <input type="text" name="name" placeholder="Name" required>
+
+        <input type="number" name="age" placeholder="Age" required>
+
+        <select name="gender" required>
+            <option value="">Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <select name="blood_group" required>
+            <option value="">Blood Group</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+        </select>
+
+        <input type="text" name="city" placeholder="City" required>
+
+        <input type="text" name="phone" placeholder="Phone" required>
+
+        <select name="available" required>
+            <option value="">Availability</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <button type="submit">Add Donor</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

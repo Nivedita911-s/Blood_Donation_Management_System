@@ -1,0 +1,11 @@
+name,age,gender,blood_group,city,phone,available
+Rahul,25,Male,O+,Bidar,9876543210,Yes
+Priya,23,Female,A+,Bengaluru,9876543211,Yes
+Arun,29,Male,B+,Hyderabad,9876543212,No
+Sneha,26,Female,O-,Bidar,9876543213,Yes
+Kiran,31,Male,AB+,Bengaluru,9876543214,Yes
+Anjali,24,Female,A-,Mysuru,9876543215,No
+Ravi,28,Male,O+,Bidar,9876543216,Yes
+Pooja,27,Female,B+,Hubli,9876543217,Yes
+Manoj,30,Male,A+,Bengaluru,9876543218,No
+Divya,22,Female,O+,Mysuru,9876543219,Yes

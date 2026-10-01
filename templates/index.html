@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Donation Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+    <h2>Blood Donation Management System</h2>
+
+    <div>
+        <a href="/">Home</a>
+        <a href="/donors">Donors</a>
+        <a href="/requests">Blood Requests</a>
+        <a href="/analytics">Analytics</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1>Blood Donation Management System</h1>
+
+    <p>
+        Manage blood donors, blood requests and analyze donation data.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Total Donors</h3>
+            <h2>{{ total_donors }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>Available Donors</h3>
+            <h2>{{ available_donors }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>Total Requests</h3>
+            <h2>{{ total_requests }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>Pending Requests</h3>
+            <h2>{{ pending_requests }}</h2>
+        </div>
+
+    </div>
+
+    <div class="info">
+
+        <h2>Project Features</h2>
+
+        <ul>
+            <li>Donor registration</li>
+            <li>Blood donor search</li>
+            <li>Blood request management</li>
+            <li>Blood group analysis</li>
+            <li>City-wise donor analysis</li>
+            <li>Donor availability analysis</li>
+            <li>Request status analysis</li>
+        </ul>
+
+    </div>
+
+</div>
+
+</body>
+</html>

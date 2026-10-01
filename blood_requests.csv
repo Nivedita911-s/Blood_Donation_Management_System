@@ -1,0 +1,6 @@
+patient_name,blood_group,city,units,status
+Ramesh,O+,Bidar,2,Pending
+Lakshmi,A+,Bengaluru,1,Completed
+Suresh,B+,Mysuru,2,Pending
+Geetha,O-,Bidar,1,Pending
+Anil,AB+,Bengaluru,3,Completed
